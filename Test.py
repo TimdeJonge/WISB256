@@ -7,9 +7,7 @@ intervalTop = int(sys.argv[1])
 target = str(sys.argv[2])
 T1 = time.perf_counter()
 primes = [2]
-print(intervalTop)
-print(target)
-for i in range(3, intervalTop):
+for i in range(3, intervalTop, 2):
     isPrime = True
     for j in primes:
         if j>math.sqrt(i):
@@ -21,5 +19,8 @@ for i in range(3, intervalTop):
         primes.append(i)
     
 T2 = time.perf_counter()
-print('Time required', T2 - T1, 'sec.')
-print(len(primes))
+timeElapsed = T2 - T1
+print('Found ' + str(len(primes)) + " Prime numbers smaller than " + str(intervalTop) + " in " + str(timeElapsed) +" seconds" )
+fin = open(target, 'w')
+for prime in primes:
+    fin.write(str(prime) + "\n")
