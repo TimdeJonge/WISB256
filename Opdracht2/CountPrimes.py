@@ -1,11 +1,11 @@
 import sys
 import math
-
 target = str(sys.argv[1])
+
 primes = [2]
 twinCount = 0
 twinConstant = 0.6601618
-for i in range(3, 10**7, 2):
+for i in range(3, 10**5, 2):
     isPrime = True
     for j in primes:
         if j>math.sqrt(i):
@@ -17,12 +17,13 @@ for i in range(3, 10**7, 2):
         if i == primes[-1] + 2:
             twinCount+=1
         primes.append(i)
-
 fin = open(target, 'w')
+
 for prime in primes:
     fin.write(str(prime) + "\n")
-    
 lastPrime = primes[-1]
+
+
 print("Largest Prime = " +str(lastPrime)) 
 print("--------------------------------")
 print("pi(N)         = " + str(len(primes))) 
