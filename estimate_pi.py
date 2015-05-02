@@ -1,5 +1,7 @@
 import random
 import math
+import sys
+
 
 
 def drop_needle(L):
@@ -12,12 +14,39 @@ def drop_needle(L):
         return True
     else:
         return False
-length = 0.9
+#definitions
+try:
+    tries = int(sys.argv[1])
+    length = float(sys.argv[2])
+except:
+    print("Use: estimate_pi.py N L")
+    quit()
+
+try:
+    random.seed(sys.argv[3])
+except:
+    pass
+
 count = 0
-tries = 10**7
+smallLength = True
+
+if(length > 1):
+    smallLength = False
+
+
+#main loop
 for i in range(tries):
     if(drop_needle(length)):
         count += 1
         
-print("count =", count)
-print("pi =", (2*tries*length)/count)
+#output
+print(count, "hits in", tries, "tries")
+if smallLength:
+    print("Pi =", (2*tries*length)/count)
+else:
+    #x = math.sqrt(length**2-1)+math.asin(length**-1)
+    #print(x)
+    #print(length - x)
+    #print(count/tries - 1)
+    #print((length - x) / (count/tries - 1))
+    print("Pi =", 2*(length - (math.sqrt(length**2 - 1)+math.asin(1/length)))/(count/tries - 1))
