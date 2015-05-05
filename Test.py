@@ -5,7 +5,7 @@ target = str(sys.argv[1])
 primes = [2]
 twinCount = 0
 twinConstant = 0.6601618
-for i in range(3, 10**7, 2):
+for i in range(3, target, 2):
     isPrime = True
     for j in primes:
         if j>math.sqrt(i):
