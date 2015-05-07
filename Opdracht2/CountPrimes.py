@@ -1,6 +1,6 @@
 import sys
 import math
-target = str(sys.argv[1])
+target = int(sys.argv[1])
 
 primes = [2]
 twinCount = 0
