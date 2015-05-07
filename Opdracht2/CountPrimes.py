@@ -17,10 +17,6 @@ for i in range(3, target, 2):
         if i == primes[-1] + 2:
             twinCount+=1
         primes.append(i)
-fin = open(target, 'w')
-
-for prime in primes:
-    fin.write(str(prime) + "\n")
 lastPrime = primes[-1]
 
 
