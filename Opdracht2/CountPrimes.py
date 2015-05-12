@@ -2,6 +2,7 @@ import sys
 import math
 target = str(sys.argv[1])
 topValue = int(sys.argv[2])
+
 primes = [2]
 twinCount = 0
 twinConstant = 0.6601618
