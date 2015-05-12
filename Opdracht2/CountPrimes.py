@@ -1,11 +1,13 @@
 import sys
 import math
 target = str(sys.argv[1])
-
+topValue = int(sys.argv[2])
 primes = [2]
 twinCount = 0
 twinConstant = 0.6601618
-for i in range(3, target, 2):
+
+
+for i in range(3, topValue, 2):
     isPrime = True
     for j in primes:
         if j>math.sqrt(i):
@@ -19,6 +21,10 @@ for i in range(3, target, 2):
         primes.append(i)
 lastPrime = primes[-1]
 
+fin = open(target, 'w')
+for prime in primes:
+    fin.write(str(prime) + "\n")
+    
 
 print("Largest Prime = " +str(lastPrime)) 
 print("--------------------------------")
