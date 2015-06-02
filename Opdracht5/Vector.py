@@ -31,11 +31,18 @@ class Vector(object):
         result = 0
         for i in range(self.amount):
             result += self.values[i]*other.values[i]
-        return result)
+        return result
     
     def norm(self):
         return math.sqrt(self.inner(self))
-
-u1 = Vector(3, [3.14,2,-5])
-u2 = Vector(3,1.0)
-print(u1.inner(u1))
+        
+    def projects(self,other):
+        return self.scalar(other.inner(self)/self.inner(self))
+    
+    def __sub__(self, other):
+        return self.lincomb(other, 1, -1)
+        
+u = Vector(2, [3,0])
+v = Vector(2,2.0)
+u1 = v.projects(u) -u 
+print(v.inner(u1))

@@ -19,7 +19,7 @@ def findAllRoots(f,a,b,epsilon):
     for i in range(int(math.floor(h)/2)):
         answer = findroot(f,a+2*i*epsilon, a+(i+1)*2*epsilon,epsilon)
         if answer != "No roots found.":
-            print answer
+            print(answer)
             solutions.append(answer)
     for i in solutions:
         for j in solutions:
@@ -28,5 +28,3 @@ def findAllRoots(f,a,b,epsilon):
                     print(i,j)
                     solutions.remove(i)
     return solutions
-    
-print(findAllRoots(lambda x: (x-1)*(x-2)*(x-3), 0, 100, .01))
