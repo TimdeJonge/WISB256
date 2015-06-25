@@ -1,3 +1,2 @@
-equation = []
-equation += "3"
-print equation
+x = input()
+print(x)
